@@ -28,6 +28,7 @@ class _CardiacHistoryViewState extends State<CardiacHistoryView> {
       },
       child: SafeArea(
         child: Scaffold(
+          resizeToAvoidBottomInset: false,
           body: Column(
             children: <Widget>[
               CommonAppBar(

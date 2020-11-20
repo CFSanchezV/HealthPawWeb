@@ -19,8 +19,10 @@ class _PetStatusViewState extends State<PetStatusView> {
       child: Scaffold(
         body: Column(
           children: <Widget>[
-            CommonAppBar(title: AppStrings.petStatus, showHeader: true),
-            Expanded(child: PetStatusContent(pet: widget.pet)),
+            CommonAppBar(
+              title: AppStrings.petStatus, showHeader: true),
+            Expanded(
+              child: PetStatusContent(pet: widget.pet)),
           ],
         ),
       ),

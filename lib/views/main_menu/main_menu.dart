@@ -27,8 +27,11 @@ class _MainMenuViewState extends State<MainMenuView> {
       child: Scaffold(
         body: Column(
           children: <Widget>[
-            CommonAppBar(title: ConstantMethodHelper.mainTitle, showHeader: false, showLogout: true),
-            Expanded(child: ConstantMethodHelper.mainContent)
+            CommonAppBar(
+              title: ConstantMethodHelper.mainTitle, showHeader: false, showLogout: true),
+            SizedBox(height: 25),
+            Expanded(
+              child: ConstantMethodHelper.mainContent)
           ],
         ),
         bottomNavigationBar: MainNavigationBar(),

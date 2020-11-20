@@ -17,10 +17,15 @@ class _CardiacTodayViewState extends State<CardiacTodayView> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Column(
           children: <Widget>[
-            CommonAppBar(title: AppStrings.hearthRate, showHeader: true),
-            Expanded(child: CardiacTodayContent(pet: widget.pet)),
+            CommonAppBar(
+              title: AppStrings.hearthRate, showHeader: true),
+            Expanded(
+              child: CardiacTodayContent(
+                pet: widget.pet)
+            ),
           ],
         ),
       ),

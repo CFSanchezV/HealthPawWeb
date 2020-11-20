@@ -279,7 +279,9 @@ class _PetInfoContentState extends State<PetInfoContent> {
               }
             }),
         SizedBox(height: 20),
-        Row(
+        SizedBox(
+          width: MediaQuery.of(context).size.width*0.283,
+          child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             RoundedButton(
@@ -313,7 +315,7 @@ class _PetInfoContentState extends State<PetInfoContent> {
               },
             ),
           ],
-        ),
+        )),
         SizedBox(height: 20),
         AppSimpleTextField(
             title: "${AppStrings.weight}:",
@@ -362,7 +364,9 @@ class _PetInfoContentState extends State<PetInfoContent> {
               }
             }),
         SizedBox(height: 20),
-        Row(
+        SizedBox(
+          width: MediaQuery.of(context).size.width*0.283,
+          child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             RoundedButton(
@@ -378,14 +382,14 @@ class _PetInfoContentState extends State<PetInfoContent> {
               onPress: () => Navigator.pop(context),
             ),
           ],
-        ),
+        )),
         SizedBox(height: 20),
       ],
     );
   }
 
   Widget _buildModifyPet() {
-    return Column(
+    return Column(      
       children: <Widget>[
         SizedBox(height: 20),
         PetAvatar(),
@@ -437,7 +441,9 @@ class _PetInfoContentState extends State<PetInfoContent> {
               }
             }),
         SizedBox(height: 20),
-        Row(
+        SizedBox(
+          width: MediaQuery.of(context).size.width*0.283,
+          child: Row(          
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             RoundedButton(
@@ -471,7 +477,9 @@ class _PetInfoContentState extends State<PetInfoContent> {
               },
             ),
           ],
+        )
         ),
+        
         SizedBox(height: 20),
         AppSimpleTextField(
             title: "${AppStrings.weight}:",
@@ -489,7 +497,9 @@ class _PetInfoContentState extends State<PetInfoContent> {
               }
             }),
         SizedBox(height: 20),
-        Row(
+        SizedBox(
+          width: MediaQuery.of(context).size.width*0.283,
+          child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             RoundedButton(
@@ -505,9 +515,12 @@ class _PetInfoContentState extends State<PetInfoContent> {
               onPress: askForDeactivation,
             ),
           ],
+        )
         ),
         SizedBox(height: 20),
-        Row(
+        SizedBox(
+          width: MediaQuery.of(context).size.width*0.283,
+          child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             RoundedButton(
@@ -517,15 +530,9 @@ class _PetInfoContentState extends State<PetInfoContent> {
               onPress: () {
                 validateRedirection(PetStatusView(pet: widget.pet));
               },
-            ),
-            RoundedButton(
-              text: AppStrings.reportStatus,
-              size: Size(150, 40),
-              style: AppTextStyle.whiteStyle(fontSize: AppFontSizes.text14),              
-              onPress: () =>
-                  validateRedirection(SelectPetStatusReport(pet: widget.pet)),
-            ),
+            )
           ],
+        )
         ),
         SizedBox(height: 20),
         widget.pet?.recommendations != null &&
@@ -533,7 +540,7 @@ class _PetInfoContentState extends State<PetInfoContent> {
             ? _buildRecommendations()
             : SizedBox(),
       ],
-    );
+    );    
   }
 
   Widget _buildRecommendations() {

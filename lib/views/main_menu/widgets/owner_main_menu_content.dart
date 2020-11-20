@@ -33,37 +33,42 @@ class _OwnerMainMenuContentState extends State<OwnerMainMenuContent> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          CircularButton(
-            size: 80,
-            onPress: () =>
-                NavigationMethods.of(context).navigateTo(SelectPetTypeView()),
-            label: AppStrings.registerPet,
-            icon: Icon(Icons.pets, size: 30, color: AppColors.PrimaryBlack),
-          ),
           SizedBox(height: 5),
-          CircularButton(
-            size: 80,
-            onPress: check,
-            label: AppStrings.pets,
-            icon: Icon(Icons.timer, size: 30, color: AppColors.PrimaryBlack),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              SizedBox(height: 5),
+              CircularButton(
+                size: 80,
+                onPress: () => NavigationMethods.of(context)
+                    .navigateTo(SelectPetTypeView()),
+                label: AppStrings.registerPet,
+                icon: Icon(Icons.pets, size: 30, color: AppColors.PrimaryBlack),
+              ),                            
+            ],
           ),
-          SizedBox(height: 5),
-          CircularButton(
-            size: 80,
-            onPress: () =>
-                NavigationMethods.of(context).navigateTo(SyncWearableView()),
-            label: AppStrings.collars,
-            icon: Icon(Icons.timer, size: 30, color: AppColors.PrimaryBlack),
-          ),
-          SizedBox(height: 5),
-          CircularButton(
-            size: 80,
-            // onPress: () =>
-                // NavigationMethods.of(context).navigateTo(SoundManagerView()),
-            label: AppStrings.defaultSound,
-            icon:
-                Icon(Icons.music_note, size: 30, color: AppColors.PrimaryBlack),
-          ),
+          SizedBox(height: 50),
+          Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                SizedBox(height: 5),
+                CircularButton(
+                size: 80,
+                onPress: check,
+                label: AppStrings.pets,
+                icon:
+                    Icon(Icons.timer, size: 30, color: AppColors.PrimaryBlack),
+                ),
+              ])
+
+          // CircularButton(
+          //   size: 80,
+          //   onPress: () =>
+          //       NavigationMethods.of(context).navigateTo(SyncWearableView()),
+          //   label: AppStrings.collars,
+          //   icon: Icon(Icons.timer, size: 30, color: AppColors.PrimaryBlack),
+          // // ),
+          // SizedBox(height: 5),
         ],
       ),
     );

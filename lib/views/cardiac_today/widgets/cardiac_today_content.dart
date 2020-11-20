@@ -18,25 +18,24 @@ class _CardiacTodayContentState extends State<CardiacTodayContent> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Container(
-        width: MediaQuery.of(context).size.width,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            SizedBox(height: 20),
-            PetAvatar(name: widget.pet?.namevar ?? ""),
-            SizedBox(height: 10),
-            StatsOverview(
-              stadistic: widget.pet.heartRate,
-              type: StadisticType.TODAY,
-              metricUnit: AppStrings.beatsPerMinuteUnits,
-              units: AppUnits.beatMetricUnits,
-              subtitle: AppStrings.todayHearthRate,
-              history: CardiacHistoryView(backToToday: true, pet: widget.pet),
-            ),
-          ],
-        ),
-      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          SizedBox(height: 20),
+          PetAvatar(name: widget.pet?.namevar ?? ""),
+          SizedBox(height: 10),
+          StatsOverview(
+            stadistic: widget.pet.heartRate,
+            type: StadisticType.TODAY,
+            metricUnit: AppStrings.beatsPerMinuteUnits,
+            units: AppUnits.beatMetricUnits,
+            subtitle: AppStrings.todayHearthRate,
+            history: CardiacHistoryView(
+              backToToday: true, 
+              pet: widget.pet),
+          ),
+        ],
+      )
     );
   }
 }

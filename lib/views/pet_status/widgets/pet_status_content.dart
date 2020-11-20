@@ -42,7 +42,7 @@ class _PetStatusContentState extends State<PetStatusContent> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width,
+      width: MediaQuery.of(context).size.width*0.7,
       child: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -117,28 +117,6 @@ class _PetStatusContentState extends State<PetStatusContent> {
                   label: AppStrings.historyPhysicalActivity,
                   icon:
                       Icon(Icons.pets, size: 30, color: AppColors.PrimaryBlack),
-                ),
-              ],
-            ),
-            SizedBox(height: divisionSize),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                CircularButton(
-                  size: 80,
-                  onPress: () =>
-                      validateRedirection(SoundTodayView(pet: widget.pet)),
-                  label: AppStrings.viewSound,
-                  icon:
-                      Icon(Icons.music_note, size: 30, color: AppColors.PrimaryBlack),
-                ),
-                CircularButton(
-                  size: 80,
-                  onPress: () =>
-                      validateRedirection(SoundHistoryView(pet: widget.pet)),
-                  label: AppStrings.historySound,
-                  icon:
-                      Icon(Icons.music_note, size: 30, color: AppColors.PrimaryBlack),
                 ),
               ],
             ),
