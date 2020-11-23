@@ -25,6 +25,14 @@ class _CardiacTodayContentState extends State<CardiacTodayContent> {
           PetAvatar(name: widget.pet?.namevar ?? ""),
           SizedBox(height: 10),
           StatsOverview(
+              iconStat: Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/icons/stat-heart.png'),
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
             stadistic: widget.pet.heartRate,
             type: StadisticType.TODAY,
             metricUnit: AppStrings.beatsPerMinuteUnits,
